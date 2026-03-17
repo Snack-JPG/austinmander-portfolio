@@ -44,6 +44,18 @@ const aiEmployeeFlow = [
   { title: "Human Oversight", text: "You stay in control", accent: "amber" },
 ];
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Austin Mander",
+  url: "https://austinmander.com",
+  email: "mailto:austinmander04@gmail.com",
+  jobTitle: "AI Engineer",
+  description:
+    "UK-based AI engineer building production AI agents, enterprise tools, and full-stack applications.",
+  sameAs: ["https://github.com/Snack-JPG"],
+};
+
 function StatCard({ value, label, note }) {
   return (
     <article className="panel reveal">
@@ -56,7 +68,10 @@ function StatCard({ value, label, note }) {
 
 function ProjectMockup({ title, label, large = false }) {
   return (
-    <div className={`browser-mockup ${large ? "browser-mockup--large" : ""}`}>
+    <div
+      className={`browser-mockup ${large ? "browser-mockup--large" : ""}`}
+      aria-hidden="true"
+    >
       <div className="browser-mockup__frame">
         <span />
         <span />
@@ -91,7 +106,7 @@ function ProjectCard({ project }) {
           <Link
             href={project.repo.href}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="pill-link"
           >
             {project.repo.label}
@@ -111,8 +126,9 @@ function ProjectCard({ project }) {
       <Link
         href={`/projects/${project.slug}`}
         className="case-study-link"
+        aria-label={`View ${project.title} case study`}
       >
-        View Case Study {"->"}
+        View Case Study <span aria-hidden="true">{"->"}</span>
       </Link>
     </article>
   );
@@ -120,7 +136,14 @@ function ProjectCard({ project }) {
 
 export default function Home() {
   return (
-    <main className="page-shell">
+    <main
+      id="main-content"
+      className="page-shell"
+    >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <section
         id="top"
         className="hero-grid"
@@ -130,21 +153,20 @@ export default function Home() {
           <div className="hero-content hero-content--split">
             <div className="hero-copy">
               <span className="eyebrow">Austin Mander · AI Engineer & Builder</span>
-              <h1 className="hero-title">I build AI agents that replace entire SaaS products.</h1>
+              <h1 className="hero-title">I build AI agents and software that remove operational bottlenecks.</h1>
               <p className="hero-text">
-                550K lines shipped solo. Now helping businesses become AI-native.
+                550K lines shipped solo across enterprise software, agent systems, and production tooling.
               </p>
             </div>
 
             <div className="hero-aside">
-              {/* <!-- Replace with actual headshot: /public/headshot.jpg --> */}
               <div
                 className="headshot-placeholder"
-                aria-label="Austin Mander headshot placeholder"
+                aria-hidden="true"
               >
                 <span>AM</span>
               </div>
-              <p className="hero-aside-text">21 · UK · Ships fast.</p>
+              <p className="hero-aside-text">21 · UK-based · Working with teams that need production-ready AI systems.</p>
             </div>
 
             <div className="hero-actions">
@@ -163,8 +185,9 @@ export default function Home() {
               <Link
                 href="https://github.com/Snack-JPG"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="cta-secondary"
+                aria-label="View Austin Mander on GitHub"
               >
                 GitHub / Snack-JPG
               </Link>
@@ -187,7 +210,7 @@ export default function Home() {
       <section className="mid-grid">
         <article className="panel reveal">
           <p className="eyebrow">About</p>
-          <p className="section-highlight">Dropped out of law. Shipped an enterprise platform solo in 8 months. Now I build AI employees for businesses.</p>
+          <p className="section-highlight">Dropped out of law. Shipped an enterprise platform solo in 8 months. Now I design AI systems that handle real operations, not just demos.</p>
         </article>
 
         <article
@@ -195,16 +218,16 @@ export default function Home() {
           className="panel reveal"
         >
           <p className="eyebrow">Services</p>
-          <div className="service-grid">
+          <ul className="service-grid">
             {services.map((service) => (
-              <div
+              <li
                 key={service}
                 className="service-tile"
               >
                 {service}
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </article>
 
         <div className="stat-grid">
@@ -221,8 +244,8 @@ export default function Home() {
 
       <section className="panel quote-panel reveal">
         <blockquote className="quote-block">
-          <p className="quote-text">&ldquo;Every company needs an AI agent strategy. This is as big as HTML.&rdquo;</p>
-          <cite className="quote-cite">- Jensen Huang, NVIDIA GTC 2026</cite>
+          <p className="quote-text">The best AI systems do not feel like demos. They remove work, preserve context, and fit the way a business already operates.</p>
+          <cite className="quote-cite">Austin Mander</cite>
         </blockquote>
       </section>
 
@@ -269,17 +292,17 @@ export default function Home() {
             <span className="diagram-line diagram-line--right-bottom" />
           </div>
         </div>
-        <div className="ai-system-footer">
+        <ul className="ai-system-footer">
           {aiEmployeeFlow.map((item) => (
-            <div
+            <li
               key={item.title}
               className={`system-pill system-pill--${item.accent}`}
             >
               <strong>{item.title}</strong>
               <span>{item.text}</span>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       <section
@@ -347,12 +370,13 @@ export default function Home() {
             <Link
               href="https://github.com/Snack-JPG"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="contact-link"
+              aria-label="Open Austin Mander GitHub profile"
             >
               github.com/Snack-JPG
             </Link>
-            <span className="contact-link contact-link--muted">LinkedIn - placeholder</span>
+            <span className="contact-link contact-link--muted">UK-based · available for select consulting projects</span>
             <Link
               href="mailto:austinmander04@gmail.com?subject=Work%20with%20Austin%20Mander"
               className="cta-primary"

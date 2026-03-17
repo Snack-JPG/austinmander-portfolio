@@ -10,10 +10,14 @@ const routes = [
 export const NavbarSection = () => {
   return (
     <header className="site-header">
-      <nav className="site-nav">
+      <nav
+        className="site-nav"
+        aria-label="Primary"
+      >
         <Link
           href="/#top"
           className="brand-mark"
+          aria-label="Austin Mander homepage"
         >
           AM
         </Link>
@@ -23,6 +27,7 @@ export const NavbarSection = () => {
               key={route.url}
               href={route.url}
               className="nav-link"
+              aria-label={`Jump to ${route.label}`}
             >
               {route.label}
             </Link>

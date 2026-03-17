@@ -4,7 +4,10 @@ import { getProjectBySlug, projects } from "../../lib/projects";
 
 function ProjectMockup({ title, label }) {
   return (
-    <div className="browser-mockup browser-mockup--large">
+    <div
+      className="browser-mockup browser-mockup--large"
+      aria-hidden="true"
+    >
       <div className="browser-mockup__frame">
         <span />
         <span />
@@ -33,6 +36,29 @@ export function generateMetadata({ params }) {
   return {
     title: `${project.title} - Austin Mander`,
     description: project.oneLine,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} - Austin Mander`,
+      description: project.oneLine,
+      type: "article",
+      url: `https://austinmander.com/projects/${project.slug}`,
+      images: [
+        {
+          url: "/opengraph-image",
+          width: 1200,
+          height: 630,
+          alt: `${project.title} project preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} - Austin Mander`,
+      description: project.oneLine,
+      images: ["/opengraph-image"],
+    },
   };
 }
 
@@ -46,13 +72,14 @@ export default function ProjectPage({ params }) {
   const otherProjects = projects.filter((item) => item.slug !== project.slug).slice(0, 4);
 
   return (
-    <main className="page-shell project-page-shell">
+    <main id="main-content" className="page-shell project-page-shell">
       <section className="project-page-hero panel reveal">
         <Link
           href="/#projects"
           className="back-link"
+          aria-label="Back to project list on homepage"
         >
-          {"<-"} Back to homepage
+          <span aria-hidden="true">{"<-"}</span> Back to homepage
         </Link>
 
         <div className="project-page-copy">
@@ -85,17 +112,17 @@ export default function ProjectPage({ params }) {
         <article className="panel reveal">
           <p className="eyebrow">Architecture</p>
           <h2 className="project-section-title">System flow</h2>
-          <div className="architecture-diagram">
+          <ol className="architecture-diagram">
             {project.architectureNodes.map((node, index) => (
-              <div
+              <li
                 key={`${project.slug}-${node}`}
                 className="architecture-node"
               >
                 <span className="architecture-node__index">{String(index + 1).padStart(2, "0")}</span>
                 <span>{node}</span>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
           <pre className="architecture-ascii">{project.architecture}</pre>
         </article>
 
@@ -128,7 +155,7 @@ export default function ProjectPage({ params }) {
               <Link
                 href={project.repo.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="cta-secondary"
               >
                 {project.repo.type === "external" ? "Visit live project" : "View on GitHub"}
