@@ -244,8 +244,8 @@ export default function Home() {
 
       <section className="panel quote-panel reveal">
         <blockquote className="quote-block">
-          <p className="quote-text">The best AI systems do not feel like demos. They remove work, preserve context, and fit the way a business already operates.</p>
-          <cite className="quote-cite">Austin Mander</cite>
+          <p className="quote-text">&ldquo;Every company needs an AI agent strategy. This is as big as HTML.&rdquo;</p>
+          <cite className="quote-cite">— Jensen Huang, NVIDIA GTC 2026</cite>
         </blockquote>
       </section>
 
