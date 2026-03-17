@@ -1,42 +1,17 @@
-# Portfolio
+# Austin Mander Portfolio
 
-<a href="https://leomiranda.vercel.app/" target="_blank">Live Demo</a>
+Custom Next.js portfolio for Austin Mander with a dark bento-grid layout focused on AI systems, solo-shipped products, and enterprise delivery.
 
-Portfolio showing information about me, technologies I've worked with and their live version and also a contact section.
-
-![portfolio](https://github.com/leoMirandaa/portfolio/assets/61714687/0d29ca0e-f280-478d-907d-987cd14941af)
-
-## Author
-
-**Leo Miranda**
-
-- Repository-name "portfolio"
-- Released on "Vercel"
-- LinkedIn ""
-
-## Installation
+## Development
 
 ```bash
-npm i
-# or
 npm install
-# Install node modules
+npm run dev
 ```
+
+## Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-# Run project
+npm run build
+npm start
 ```
-
-## Built with
-
-- Next 13
-- NextUI
-- Tailwind
-- Motion one
