@@ -1,11 +1,10 @@
 import Link from "next/link";
 
 const routes = [
-  { label: "Top", url: "#top" },
-  { label: "Projects", url: "#projects" },
-  { label: "Services", url: "#services" },
-  { label: "Stack", url: "#stack" },
-  { label: "Contact", url: "#contact" },
+  { label: "Home", url: "/#top" },
+  { label: "Projects", url: "/#projects" },
+  { label: "Services", url: "/#services" },
+  { label: "Contact", url: "/#contact" },
 ];
 
 export const NavbarSection = () => {
@@ -13,7 +12,7 @@ export const NavbarSection = () => {
     <header className="site-header">
       <nav className="site-nav">
         <Link
-          href="#top"
+          href="/#top"
           className="brand-mark"
         >
           AM
