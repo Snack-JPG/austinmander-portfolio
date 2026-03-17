@@ -166,7 +166,7 @@ export default function Home() {
               >
                 <span>AM</span>
               </div>
-              <p className="hero-aside-text">21 · UK · Available for projects</p>
+              <p className="hero-aside-text">UK · Available for projects</p>
             </div>
 
             <div className="hero-actions">

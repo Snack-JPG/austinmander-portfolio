@@ -49,7 +49,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Austin Mander — AI Engineer & Builder",
     description:
-      "21-year-old developer shipping production systems that most teams need 10 people for.",
+      "UK-based developer shipping production AI systems, enterprise tools, and full-stack applications.",
     images: ["/opengraph-image"],
   },
 };
