@@ -2,10 +2,10 @@ import Link from "next/link";
 import { projects } from "./lib/projects";
 
 const stats = [
-  { value: "550K+", label: "lines of code shipped", note: "Change Radar alone." },
-  { value: "8 months", label: "to build an enterprise SaaS solo", note: "From zero to production." },
-  { value: "7+", label: "open source repositories", note: "Public work that ships." },
-  { value: "4 repos", label: "shipped in a single day", note: "Still production-grade." },
+  { value: "550K+", label: "lines shipped", note: "Largest project: Change Radar." },
+  { value: "8 months", label: "solo enterprise SaaS", note: "Zero to production." },
+  { value: "7+", label: "public repos", note: "All real, all shipped." },
+  { value: "4 repos", label: "in one day", note: "Built and deployed." },
 ];
 
 const services = [
@@ -153,9 +153,9 @@ export default function Home() {
           <div className="hero-content hero-content--split">
             <div className="hero-copy">
               <span className="eyebrow">Austin Mander · AI Engineer & Builder</span>
-              <h1 className="hero-title">I build AI agents and software that remove operational bottlenecks.</h1>
+              <h1 className="hero-title">I build things that actually ship.</h1>
               <p className="hero-text">
-                550K lines shipped solo across enterprise software, agent systems, and production tooling.
+                AI agents, full-stack apps, and tools that replace entire SaaS products. 550K lines shipped solo.
               </p>
             </div>
 
@@ -166,7 +166,7 @@ export default function Home() {
               >
                 <span>AM</span>
               </div>
-              <p className="hero-aside-text">21 · UK-based · Working with teams that need production-ready AI systems.</p>
+              <p className="hero-aside-text">21 · UK · Available for projects</p>
             </div>
 
             <div className="hero-actions">
@@ -210,7 +210,7 @@ export default function Home() {
       <section className="mid-grid">
         <article className="panel reveal">
           <p className="eyebrow">About</p>
-          <p className="section-highlight">Dropped out of law. Shipped an enterprise platform solo in 8 months. Now I design AI systems that handle real operations, not just demos.</p>
+          <p className="section-highlight">Dropped out of law to build software. Shipped an enterprise platform solo in 8 months. Now I help businesses replace tools and manual work with AI agents.</p>
         </article>
 
         <article
@@ -252,7 +252,7 @@ export default function Home() {
       <section className="panel ai-system-panel reveal">
         <div className="section-heading">
           <p className="eyebrow">How AI Employees Work</p>
-          <h2 className="section-title">One agent. All your tools. Works while you sleep.</h2>
+          <h2 className="section-title">How it works.</h2>
         </div>
         <div className="ai-system-diagram">
           <div className="ai-system-column">
@@ -311,7 +311,7 @@ export default function Home() {
       >
         <div className="section-heading reveal">
           <p className="eyebrow">Projects</p>
-          <h2 className="section-title">Solo-built systems with real operational weight.</h2>
+          <h2 className="section-title">Things I&apos;ve built.</h2>
         </div>
         <div className="project-grid">
           {projects.map((project) => (
@@ -376,7 +376,7 @@ export default function Home() {
             >
               github.com/Snack-JPG
             </Link>
-            <span className="contact-link contact-link--muted">UK-based · available for select consulting projects</span>
+            <span className="contact-link contact-link--muted">UK-based · open to freelance and consulting</span>
             <Link
               href="mailto:austinmander04@gmail.com?subject=Work%20with%20Austin%20Mander"
               className="cta-primary"

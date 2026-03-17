@@ -3,7 +3,7 @@ export const projects = [
     title: "Change Radar",
     slug: "change-radar",
     summary: "Enterprise PMO platform, 550K LOC.",
-    oneLine: "AI-powered enterprise change intelligence for complex organisations.",
+    oneLine: "Enterprise PMO with 8 AI engines. 550K lines, built solo.",
     details:
       "8 AI engines, multi-tenant SaaS architecture, and SOC 2-grade security built solo in 8 months.",
     tech: ["Next.js", "FastAPI", "PostgreSQL", "Redis", "8 AI engines"],
@@ -24,13 +24,13 @@ export const projects = [
     ],
     timeToBuild: "8 months solo",
     repo: { type: "private", label: "Private - available on request" },
-    screenshotLabel: "Executive change cockpit",
+    screenshotLabel: "Change Radar dashboard",
   },
   {
     title: "AI Due Diligence Agent",
     slug: "ai-due-diligence",
     summary: "Multi-agent system for automated business analysis.",
-    oneLine: "Parallel AI analysts for fast, reviewable due diligence.",
+    oneLine: "Four AI agents analyse company docs in parallel. LangGraph + RAG.",
     details:
       "Four specialised AI agents analyse documents in parallel with human checkpoints, RAG, and LangSmith tracing.",
     tech: ["Next.js", "FastAPI", "LangGraph", "LangSmith", "ChromaDB", "SSE"],
@@ -56,13 +56,13 @@ export const projects = [
       href: "https://github.com/Snack-JPG/ai-due-diligence",
       label: "GitHub",
     },
-    screenshotLabel: "Due diligence control room",
+    screenshotLabel: "Analysis dashboard",
   },
   {
     title: "OpenClaw Knowledge Base",
     slug: "openclaw-kb",
     summary: "Organisational memory system for AI agents.",
-    oneLine: "Git-auditable memory so agents learn your business over time.",
+    oneLine: "Agents propose knowledge, humans approve. Markdown files in folders.",
     details:
       "Markdown-first architecture with propose-save workflows, trust controls, and conflict detection.",
     tech: ["Bash", "Markdown", "CLI", "Git", "Knowledge ops"],
@@ -86,13 +86,13 @@ export const projects = [
       href: "https://github.com/Snack-JPG/openclaw-kb",
       label: "GitHub",
     },
-    screenshotLabel: "Knowledge capture workflow",
+    screenshotLabel: "Knowledge capture flow",
   },
   {
     title: "OpenClaw Outreach",
     slug: "openclaw-outreach",
     summary: "Cold email copilot replacing $97/mo SaaS tools.",
-    oneLine: "An outreach agent that researches leads and runs the sequence state machine.",
+    oneLine: "Replaces Instantly.ai. AI writes the emails, classifies the replies.",
     details:
       "Sequence engine, reply classification, and personalisation built around lightweight local-first state.",
     tech: ["OpenClaw", "CLI", "Himalaya", "YAML", "State machine"],
@@ -118,7 +118,7 @@ export const projects = [
       href: "https://github.com/Snack-JPG/openclaw-outreach",
       label: "GitHub",
     },
-    screenshotLabel: "Campaign ops console",
+    screenshotLabel: "Outreach dashboard",
   },
   {
     title: "QuantFlow",
@@ -148,7 +148,7 @@ export const projects = [
       href: "https://github.com/Snack-JPG/quantflow",
       label: "GitHub",
     },
-    screenshotLabel: "Order book intelligence desk",
+    screenshotLabel: "Live trading view",
   },
   {
     title: "GHL MCP Server",
@@ -177,7 +177,7 @@ export const projects = [
       href: "https://github.com/Snack-JPG/ghl-mcp",
       label: "GitHub",
     },
-    screenshotLabel: "CRM tool orchestration",
+    screenshotLabel: "MCP tool integration",
   },
   {
     title: "chase.md",
@@ -266,7 +266,7 @@ export const projects = [
       href: "https://tradehub.directory",
       label: "Live site",
     },
-    screenshotLabel: "Prospecting pipeline dashboard",
+    screenshotLabel: "Pipeline overview",
   },
 ];
 
